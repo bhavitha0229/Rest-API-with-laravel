@@ -28,28 +28,30 @@ class SubjectController extends Controller
         return response('Student Subject inserted successfully');
 
     }
-    // public function Edit($id){
+    public function Edit($id){
       
-    //     $sclass =Sclass::findOrFail($id);
-    //     return response()->json($sclass);
+        $Subject =Subject::findOrFail($id);
+        return response()->json($Subject);
 
-    // }
+    }
 
-    // public function Update(Request $request, $id){
+    public function Update(Request $request, $id){
 
-    //     Sclass::findOrFail($id)->update([
-    //         'class_name' => $request->class_name,
+        Subject::findOrFail($id)->update([
+            'class_id' =>$request->class_id,
+            'subject_name'=>$request->subject_name,
+            'subject_code'=>$request->subject_code
          
-    //     ]);
-    //     return response('Student Class Updated successfully');
+        ]);
+        return response('Student Subject Updated successfully');
 
-    // }
-    // public function Delete($id){
+    }
+    public function Delete($id){
 
-    //     Sclass::findOrFail($id)->delete();
-    //     return response('Student Class Deleted successfully');
+        Subject::findOrFail($id)->delete();
+        return response('Student Subject Deleted successfully');
 
-    // }
+    }
 
 }
 
