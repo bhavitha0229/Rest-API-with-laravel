@@ -34,7 +34,6 @@ class SubjectController extends Controller
         return response()->json($Subject);
 
     }
-
     public function Update(Request $request, $id){
 
         Subject::findOrFail($id)->update([
