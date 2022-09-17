@@ -27,4 +27,10 @@ class SclassController extends Controller
         return response('Student Class inserted successfully');
 
     }
+    public function Edit($id){
+      
+        $sclass =Sclass::findOrFail($id);
+        return response()->json($sclass);
+
+    }
 }
